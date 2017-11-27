@@ -3,10 +3,10 @@
 var kafka = require('kafka-node'),
 Producer = kafka.Producer,
 KeyedMessage = kafka.KeyedMessage,
-client = new kafka.Client(),
+client = new kafka.Client('zookeeper.kubeless.svc.cluster.local:2181/'),
 producer = new Producer(client),
 payloads = [
-    { topic: 'event-test', messages: 'hi from kafka' }
+    { topic: 'event_test', messages: 'hi from kafka' }
 ];
 
 module.exports = {
@@ -15,8 +15,9 @@ module.exports = {
     producer.on('ready', function () {
       console.log('ready');
       producer.send(payloads, function (err, data) {
-          console.log('MESSAGE SENT: ', data);
-          res.end('Done sending message')
+        console.log('THIS WAS THE ERROR: ', err)
+        console.log('MESSAGE SENT: ', data);
+        res.end('Done sending message')
       });
     });
 
