@@ -8,37 +8,37 @@ plugins:
   - serverless-kubeless
 
 functions:
-  create:
+  app-create:
     handler: todos-create.create
     events:
       - http:
           path: /create
-  read-all:
+  app-read-all:
     handler: todos-read-all.readAll
     events:
       - http:
           path: /read-all
-  read-one:
+  app-read-one:
     handler: todos-read-one.readOne
     events:
       - http:
           path: /read
-  update:
+  app-update:
     handler: todos-update.update
     events:
       - http:
           path: /update
-  delete:
+  app-delete:
     handler: todos-delete.delete
     events:
       - http:
           path: /delete
-  event-pub:
+  app-event-pub:
     handler: event-pub.publish
     events:
       - http:
           path: /publish-event
-  event-sub:
+  app-event-sub:
     handler: event-sub.subscribe
     events:
       - trigger: 'event_test'

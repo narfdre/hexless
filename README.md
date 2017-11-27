@@ -47,6 +47,6 @@ $ cd backend && npm install && serverless deploy && cd -
 
 9. Run front-end
 ```console
-$ cd frontend && npm install && npm start && cd -
+$ cd frontend/react-redux && npm install && npm start && cd -
 ```
 
