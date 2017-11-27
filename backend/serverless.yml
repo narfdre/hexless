@@ -33,3 +33,12 @@ functions:
     events:
       - http:
           path: /delete
+  event-pub:
+    handler: event-pub.publish
+    events:
+      - http:
+          path: /publish-event
+  event-sub:
+    handler: event-sub.subscribe
+    events:
+      - trigger: 'event_test'
