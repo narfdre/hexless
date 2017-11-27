@@ -42,15 +42,11 @@ $ curl -sL https://raw.githubusercontent.com/bitnami/bitnami-docker-mongodb/mast
 
 8. Deploy
 ```console
-$ cd backend
-$ npm install
-$ serverless deploy
+$ cd backend && npm install && serverless deploy && cd -
 ```
 
 9. Run front-end
 ```console
-$ cd frontend
-$ npm install
-$ npm start
+$ cd frontend && npm install && npm start && cd -
 ```
 
